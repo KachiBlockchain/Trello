@@ -1,0 +1,6 @@
+I stopped at 10:08:00
+
+
+type error in list-container.tsx and update-list-order/schema
+
+video hour 8:57:00
