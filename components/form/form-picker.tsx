@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { defaultImages } from "@/constants/images";
 import Link from "next/link";
 import { FormErrors } from "./form-errors";
+import { unsplash } from "@/lib/unsplash";
 
 interface FormPickerProps {
   id: string;
@@ -18,22 +19,21 @@ export const FormPicker = ({ id, errors }: FormPickerProps) => {
   const { pending } = useFormStatus();
   const [isLoading, setIsLoading] = useState(true);
   const [selectedImageId, setSelectedImageId] = useState(null);
-  const [images, setImages] =
-    useState<Array<Record<string, any>>>(defaultImages);
+  const [images, setImages] = useState<Array<Record<string, any>>>();
 
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        // const result = await unsplash.photos.getRandom({
-        //   collectionIds: ["317099"],
-        //   count: 9,
-        // });
-        // if (result && result.response) {
-        //   const newImages = result.response as Array<Record<string, any>>;
-        //   setImages(newImages);
-        // } else {
-        //   console.error("Failed to get Images from Unsplash");
-        // }
+        const result = await unsplash.photos.getRandom({
+          collectionIds: ["317099"],
+          count: 9,
+        });
+        if (result && result.response) {
+          const newImages = result.response as Array<Record<string, any>>;
+          setImages(newImages);
+        } else {
+          console.error("Failed to get Images from Unsplash");
+        }
       } catch (error) {
         console.log(error);
         setImages(defaultImages);
@@ -55,8 +55,9 @@ export const FormPicker = ({ id, errors }: FormPickerProps) => {
   return (
     <div className="relative">
       <div className="grid grid-cols-3 gap-2 mb-2">
-        {images.map((image, index) => (
-          <div key={index}
+        {images?.map((image, index) => (
+          <div
+            key={index}
             className={cn(
               "cursor-pointer relative aspect-video group hover:opacity-75 transition bg-muted",
               pending && "opacity-50 hover:opacity-50 cursor-auto"

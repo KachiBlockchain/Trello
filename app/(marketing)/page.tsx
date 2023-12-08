@@ -15,16 +15,25 @@ const textFont = Poppins({
 });
 const MarketingPage = () => {
   return (
-    <div className="flex items-center justify-center flex-col">
+    <div className="relative flex items-center justify-center flex-col">
       <div
         className={cn(
           "flex items-center justify-center flex-col",
           headingFont.className
         )}
       >
+        {/* <div className="absolute top-4 left-4">
+          <iframe
+            width="853"
+            height="480"
+            src="https://www.youtube.com/embed/-a6E-r8W2Bs"
+            title="Googles GEMINI Just SHOCKED The ENTIRE INDUSTRY! (GPT-4 Beaten) Full Breakdown + Technical Report"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          ></iframe>
+        </div> */}
         <div className="mb-4 flex items-center border shadow-sm p-4 bg-amber-100 text-amber-700 rounded-full uppercase">
           <Medal className="h-6 w-6 mr-2" />
-          No 1 task management
+          Taskify - Trello Clone
         </div>
         <h1 className="text-3xl md:text-6xl text-center text-neutral-800 mb-6">
           Taskify helps team move
@@ -33,7 +42,12 @@ const MarketingPage = () => {
           work forward
         </div>
       </div>
-      <div className={cn("text-sm md:text-xl text-neutral-400 mt-4 max-w-xs md:max-w-2xl text-center mx-auto", textFont.className)}>
+      <div
+        className={cn(
+          "text-sm md:text-xl text-neutral-400 mt-4 max-w-xs md:max-w-2xl text-center mx-auto",
+          textFont.className
+        )}
+      >
         Collaborate, manage projects, and reach new productivity peaks. From
         high rises to the home office, the way your team works is unique -
         accomplish all with Taskify.
