@@ -53,10 +53,6 @@ const MarketingPage = () => {
         accomplish all with Taskify.
       </div>
 
-      {/* <Button className="mt-6" size="lg" onClick={proModal.onOpen()}>
-        Clickme
-        <Link href="/sign-up">Get Taskfiy for free</Link>
-      </Button> */}
       <Dialog>
         <DialogTrigger asChild>
           <Button className="mt-6 animate-pulse" size="lg">
@@ -67,7 +63,7 @@ const MarketingPage = () => {
           <DialogHeader className="flex flex-col items-center justify-center">
             <DialogTitle>Video Description</DialogTitle>
             <DialogDescription>
-              Maximize the video to see the application features in it's full glory.
+              Maximize the video to see the application features in it&apos;s full glory.
             </DialogDescription>
           </DialogHeader>
           <div className="gap-4 py-4">
