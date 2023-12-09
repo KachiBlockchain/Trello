@@ -1,4 +1,12 @@
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Medal } from "lucide-react";
 import { Poppins } from "next/font/google";
 
@@ -15,26 +23,18 @@ const textFont = Poppins({
 });
 const MarketingPage = () => {
   return (
-    <div className="relative flex items-center justify-center flex-col">
+    <div className=" flex items-center justify-center flex-col">
       <div
         className={cn(
           "flex items-center justify-center flex-col",
           headingFont.className
         )}
       >
-        {/* <div className="absolute top-4 left-4">
-          <iframe
-            width="853"
-            height="480"
-            src="https://www.youtube.com/embed/-a6E-r8W2Bs"
-            title="Googles GEMINI Just SHOCKED The ENTIRE INDUSTRY! (GPT-4 Beaten) Full Breakdown + Technical Report"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          ></iframe>
-        </div> */}
         <div className="mb-4 flex items-center border shadow-sm p-4 bg-amber-100 text-amber-700 rounded-full uppercase">
           <Medal className="h-6 w-6 mr-2" />
           Taskify - Trello Clone
         </div>
+
         <h1 className="text-3xl md:text-6xl text-center text-neutral-800 mb-6">
           Taskify helps team move
         </h1>
@@ -52,9 +52,35 @@ const MarketingPage = () => {
         high rises to the home office, the way your team works is unique -
         accomplish all with Taskify.
       </div>
-      <Button className="mt-6" size="lg" asChild>
+
+      {/* <Button className="mt-6" size="lg" onClick={proModal.onOpen()}>
+        Clickme
         <Link href="/sign-up">Get Taskfiy for free</Link>
-      </Button>
+      </Button> */}
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button className="mt-6 animate-pulse" size="lg">
+            Click me to watch a video to see how this app works.
+          </Button>
+        </DialogTrigger>
+        <DialogContent className="sm:max-w-[525px] flex items-center flex-col">
+          <DialogHeader className="flex flex-col items-center justify-center">
+            <DialogTitle>Video Description</DialogTitle>
+            <DialogDescription>
+              Maximize the video to see the application features in it's full glory.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="gap-4 py-4">
+            <div className=" m-4 lg:m-0">
+              <iframe
+                src="https://www.loom.com/embed/882eb2cec79645d4a79175662dbee19b?sid=8de8d716-96a4-42d6-a32c-ff197718e71a"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+      <p className="text-sm text-neutral-700 text-center my-2">You will love it, promised.</p>
     </div>
   );
 };
