@@ -35,7 +35,7 @@ export const Header = ({ data }: HeaderProps) => {
     }
   });
 
-  const inputRef = useRef<ElementRef<"input">>();
+  const inputRef = useRef<ElementRef<"input">>(null);
   const [title, setTitle] = useState(data.title);
 
   const onBlur = () => {
@@ -64,7 +64,7 @@ export const Header = ({ data }: HeaderProps) => {
             id="title"
             onBlur={onBlur}
             defaultValue={title}
-            className="font-semibold text-xl px-1 text-neutral-700 bg-transparent border-transparent relative -left-1.5 w-[95%] focus-visible:bg-white focus-visible:border-input mb-0.5  truncate"
+            className="font-semibold text-xl px-1 text-neutral-700 bg-transparent border-transparent relative -left-1.5 w-[95%] focus-visible:bg-white focus-visible:border-input mb-0.5 truncate"
           />
         </form>
         <p className="text-sm text-muted-foreground">
