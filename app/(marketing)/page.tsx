@@ -56,7 +56,7 @@ const MarketingPage = () => {
       <Dialog>
         <DialogTrigger asChild>
           <Button className="mt-6 animate-pulse" size="lg">
-            Click me to watch a video to see how this app works.
+            Watch a video to see how this app works.
           </Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[525px] flex items-center flex-col">
